@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script src="index.js" defer></script>
+</head>
+
+  <body>
+    
+    <main>
+        <p id="activePlayer"></p>
+        <div class="board">
+            <div class="board__item" data-pos="0"></div>
+            <div class="board__item" data-pos="1"></div>
+            <div class="board__item" data-pos="2"></div>
+            <div class="board__item" data-pos="3"></div>
+            <div class="board__item" data-pos="4"></div>
+            <div class="board__item" data-pos="5"></div>
+            <div class="board__item" data-pos="6"></div>
+            <div class="board__item" data-pos="7"></div>
+            <div class="board__item" data-pos="8"></div>
+        </div>
+
+        <button class="restartButton" id="button1">Restart</button>
+
+        <div class="winningMessage">
+          <div data-winning-message-text></div>
+          <button class="restartButton" id="button2">Restart</button>
+        </div>
+    </main>
+  
+  </body>
+</html>

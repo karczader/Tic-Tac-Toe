@@ -1,0 +1,140 @@
+
+:root{
+    --main-color: #9999ff;
+    --second-color: rgb(233, 233, 233);
+    --active-color:#6666cc;
+    --border-color: rgb(128,128,128);
+    --text-color: rgb(55,55,55);
+}
+  
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+main{
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#activePlayer{
+    font-size: 28px;
+    height: 50px;
+}
+
+.board{
+    background-color: var(--second-color);
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 5px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    width: 472px;
+
+}
+
+.board__item{
+    background-color: var(--main-color);
+    border: 1px solid var(--border-color);
+    transition: all .1s linear;
+}
+
+.board__item-X,
+.board__item-O{
+    background-color:var(--main-color);
+    position: relative;
+}
+
+.board__item-X::before,
+.board__item-X::after
+{
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  content: "";
+  background-color:var(--text-color);
+}
+
+.board__item-X::before
+{
+  transform: rotate(45deg);
+}
+
+.board__item-X::after
+{
+  transform: rotate(-45deg);
+}
+
+.board__item-O::before{
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 5px solid var(--second-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.board__item:hover{
+    background-color:  var(--active-color);
+}
+
+#information{
+    font-size: 28px;
+    height: 50px;
+}
+
+.restartButton{
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  color: var(--text-color);
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  transition: all .1s linear;
+  text-transform: uppercase;
+}
+
+.restartButton:hover{
+  color: var(--second-color);
+  cursor: pointer;
+  background-color: var(--active-color)
+}
+
+.winningMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+  
+  
+.winningMessage.show {
+    display: flex;
+}
